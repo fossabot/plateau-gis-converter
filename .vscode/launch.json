@@ -17,9 +17,9 @@
 				// "/Users/satoru/Downloads/plateau/22203_numazu-shi_2021_citygml_4_op/udx/veg/52385628_veg_6697_op.gml",
 				"/Users/satoru/Downloads/plateau/13100_tokyo23-ku_2022_citygml_1_2_op/udx/bldg/53393549_bldg_6697_2_op.gml",
 				"--sink",
-				"czml",
+				"gltf",
 				"--output",
-				"/Users/satoru/github.com/MIERUNE/nusamai/demo/cesium/examples/sample.json"
+				"/Users/satoru/github.com/MIERUNE/nusamai/demo/cesium/examples/texture"
 			],
 			"cwd": "${workspaceFolder}"
 		}
