@@ -142,6 +142,16 @@ impl DataSink for ShapefileSink {
 
                         // Write each feature
                         for (shape, mut attributes) in features {
+
+                            let file_size = &shp_path.metadata()?.len();
+                            const LIMIT_SIZE: u64 = 2 * 1024 * 1024 * 1024;
+                            if file_size > &LIMIT_SIZE {
+                                feedback.fatal_error(PipelineError::Other(format!(
+                                    "Shapefile size exceeds 2GB: {}",
+                                    shp_path.display()
+                                )));
+                            }
+                            
                             fill_missing_fields(&mut attributes, &table_info);
                             let record = attributes_to_record(attributes);
 
